@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\produkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+route::get('aboutus',function(){
+    echo"ini merupakan contoh sebuah page (page about)";
+})->name("tentang");
+
+Route::get('/show/{id}', function ($id) {
+    echo "Nilai Parameter Adalah ".$id;
+});
+
+Route::get('/edit/{nama}', function ($nama) {
+    echo "Nilai Parameter Adalah ".$nama;
+ })->where('nama','[A-Za-z]+');
+
+
+route::get('/utama',function() {
+    echo "ini page utama";
+    echo "<br>";
+    echo "<a href='".route('tentang')."'>about</a>";
+});
+
+Route::get('/produk', [produkController::class ,'index']);
