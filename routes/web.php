@@ -39,3 +39,9 @@ route::get('/utama',function() {
 });
 
 Route::get('/produk', [produkController::class ,'index']);
+
+Route::get('latihanView01',function(){
+    return view("latihan01");
+});
+
+Route::get('/produk/showproduk', [produkController::class ,'showproduk']);
