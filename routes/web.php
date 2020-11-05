@@ -22,6 +22,7 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/test', [produkController::class ,'index']);
 
 
 route::get('aboutus',function(){
