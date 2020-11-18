@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\produkController;
+use App\Http\Controllers\produksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/test', [produkController::class ,'index']);
+route::get('/produks', [produksController::class ,'index']);
 
 
 route::get('aboutus',function(){
