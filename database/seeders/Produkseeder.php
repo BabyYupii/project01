@@ -29,3 +29,4 @@ class Produkseeder extends Seeder
         );
     }
 }
+
