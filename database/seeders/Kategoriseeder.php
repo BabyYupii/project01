@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\product;
+use App\Models\Kategori;
 
-class tugas2 extends Seeder
+class Kategoriseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,13 +15,13 @@ class tugas2 extends Seeder
     public function run()
     {
         //
-            product::create(
+            Kategori::create(
             ['Kategori'=>'keyboard',
             'Keterangan'=>'Segala macam keyboard PC, Laptop, TV']);
-            product::create(
+            Kategori::create(
             ['Kategori'=>'Mouse',
             'Keterangan'=>'Segala Macam Mouse Wire maupun Wireless']);
-            product::create(
+            Kategori::create(
             ['Kategori'=>'Flashdisk',
             'Keterangan'=>'Segala Macam Merek, ukuran Flashdisk']);
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Tugas2 extends Migration
+class Tbkategori extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class Tugas2 extends Migration
      */
     public function up()
     {
-        //
-        schema::create('product',function(Blueprint $tb){
-            $tb->increments('ID');
-            $tb->string('Kategori',100);
+        
+        schema::create('kategori', function(Blueprint $tb) {
+            $tb->id();
+            $tb->string('Kategori',200);
             $tb->string('Keterangan',255);
             $tb->timestamps();
         });
@@ -29,8 +29,8 @@ class Tugas2 extends Migration
      */
     public function down()
     {
-        //
+        
        
-        schema::dropIfExists('product');
+        schema::dropIfExists('Kategori');
     }
 }

@@ -16,8 +16,9 @@ class Tbproduk extends Migration
         //bagian restore data
         schema::create('produks',function(Blueprint $tb){
             $tb->increments('ID');
-            $tb->string('Nama',20);
+            $tb->string('Nama',200);
             $tb->integer('ID_KATEGORI');
+            $tb->integer('qty');
             $tb->float('HARGA_BELI');
             $tb->float('HARGA_JUAL');
             $tb->timestamps();

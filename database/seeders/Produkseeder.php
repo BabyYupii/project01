@@ -15,18 +15,41 @@ class Produkseeder extends Seeder
     public function run()
     {
         //
-        produks::create(
-            ['namaproduk'=>"Flashdisk 4gb Kingstan",
-            'id_kat'=>"3",
-            'qty'=>"210",
-            'harga_jual'=>"60000",
-            'harga_beli'=>"45000"],
-            ['namaproduk'=>"Flashdisk 8gb Kingstan",
-            'id_kat'=>"3",
-            'qty'=>"210",
-            'harga_jual'=>"80000",
-            'harga_beli'=>"60000"],
-        );
+            produks::create(
+                ['Nama'=>"Flashdisk 4gb Kingstan",
+                'ID_KATEGORI'=>"3",
+                'qty'=>"210",
+                'HARGA_JUAL'=>"60000",
+                'HARGA_BELI'=>"45000"]);
+
+                produks::create(
+                ['Nama'=>"Flashdisk 8gb Kingstan",
+                'ID_KATEGORI'=>"4",
+                'qty'=>"200",
+                'HARGA_JUAL'=>"80000",
+                'HARGA_BELI'=>"60000"]);
+
+                produks::create(
+                    ['Nama'=>"MOD Aegis Legend",
+                    'ID_KATEGORI'=>"2",
+                    'qty'=>"10",
+                    'HARGA_JUAL'=>"500000",
+                    'HARGA_BELI'=>"450000"]);
+
+                produks::create(
+                    ['Nama'=>"Jasa Joki MLBB",
+                    'ID_KATEGORI'=>"1",
+                    'qty'=>"999",
+                    'HARGA_JUAL'=>"20000",
+                    'HARGA_BELI'=>"10000"]);
+
+                 produks::create(
+                        ['Nama'=>"LCD Vivo Y69",
+                        'ID_KATEGORI'=>"1",
+                        'qty'=>"20",
+                        'HARGA_JUAL'=>"650000",
+                        'HARGA_BELI'=>"300000"]);    
+
+        }
     }
-}
 

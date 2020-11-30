@@ -5,7 +5,7 @@
     </head>
     <body>
         <h2><b> Isi Tabel Produk </b></h2>
-        <table border"1">
+        <table border"2">
         <thead>
             <tr>
                 <th>No</th>
@@ -16,14 +16,14 @@
                 <th>Harga Jual</th>
             </tr>
         </thead>
-        @foreach($produk as $i=>$p)
+        @foreach($produks as $i=>$p)
             <tr>
                 <td>{{$i+1}}</td>
-                <td>{{$p->id_kat}}</td>
-                <td>{{$p->namaproduk}}</td>
+                <td>{{$p->ID_KATEGORI}}</td>
+                <td>{{$p->Nama}}</td>
                 <td>{{$p->qty}}</td>
-                <td>{{$p->harga_beli}}</td>
-                <td>{{$p->harga_jual}}</td>
+                <td>{{$p->HARGA_BELI}}</td>
+                <td>{{$p->HARGA_JUAL}}</td>
             </tr>
         @endforeach
         </tbody>

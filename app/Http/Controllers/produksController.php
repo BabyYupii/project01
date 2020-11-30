@@ -8,7 +8,7 @@ use DB;
 class produksController extends Controller
 {
     public function index(){
-        $produk = DB::table('produks')->get();
-        return view('produk.vproduk', compact('produk'));
+        $produks = DB::table('produks')->get();
+        return view('produk.vproduk', compact('produks'));
     }
 }

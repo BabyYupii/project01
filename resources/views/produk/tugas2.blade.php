@@ -17,7 +17,7 @@
         <th>Keterangan</th>
         </tr>
         <tbody>
-        @foreach ($product as $i => $p)
+        @foreach ($Kategori as $i => $p)
             <tr>
                 <td>{{$p->Kategori}}</td>
                 <td>{{$p->Keterangan}}</td>
