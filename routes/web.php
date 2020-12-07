@@ -5,7 +5,7 @@ use App\Http\Controllers\produkController;
 use App\Http\Controllers\produksController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\Prak9Controller;
-
+use App\Http\Controllers\Prak10Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +33,8 @@ route::get('/Kategori', [KategoriController::class ,'index']);
 route::get('/prak9_01', [Prak9Controller::class ,'QB_tugas1']);
 route::get('/prak9_02', [Prak9Controller::class ,'QB_tugas2']);
 route::get('/prak9_03', [Prak9Controller::class ,'QB_tugas3']);
+
+route::resource('/prak10', Prak10Controller::class );
 
 route::get('aboutus',function(){
     echo"ini merupakan contoh sebuah page (page about)";
