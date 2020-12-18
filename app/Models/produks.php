@@ -10,4 +10,5 @@ class produks extends Model
     use HasFactory;
     
     protected $table='produks';
+    protected $guarded =['created_at', 'updated_at'];
 }

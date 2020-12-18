@@ -15,8 +15,8 @@ class Prak10Controller extends Controller
     public function index()
     {
         //menampilkan data dari tabel kategori
-        $KData = kategori::get();
-        $JRek = kategori::count();
+        $KData = kategori ::get();
+        $JRek = kategori ::count();
 
         return view('praktikum10.tugas1', compact('KData','JRek') );
     }
