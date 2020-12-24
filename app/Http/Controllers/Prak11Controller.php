@@ -94,7 +94,9 @@ class Prak11Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        //mengedit data
+        $edt = produks::where('id', $id)->first();
+        return view('praktikum11.edit',compact('edt'));
     }
 
     /**
@@ -106,7 +108,15 @@ class Prak11Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //mengupdate data
+        produks::where('id', $id)->update([
+            'Nama'=> $request->txProduk,
+            'HARGA_BELI'=> $request->txHargaBeli,
+            'HARGA_JUAL'=> $request->txHargaJual,
+            'qty'=> $request->txStok,
+
+        ]);
+        return redirect()->route('prak11.index');
     }
 
     /**
