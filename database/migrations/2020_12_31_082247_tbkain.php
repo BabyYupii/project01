@@ -35,5 +35,6 @@ class Tbkain extends Migration
     public function down()
     {
         //
+        schema::dropIfExist('Kain');
     }
 }

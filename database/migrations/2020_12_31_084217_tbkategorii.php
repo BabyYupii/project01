@@ -14,10 +14,10 @@ class Tbkategorii extends Migration
     public function up()
     {
         //
-        schema::create('kategori', function(Blueprint $tb) {
-            $tb->id();
-            $tb->string('Kategori',200);
-            $tb->string('Keterangan',255);
+        schema::create('Kategorii', function(Blueprint $tb) {
+            $tb->increments('Id_Kat');
+            $tb->varchar('Kategori',150);
+            $tb->varchar('Keterangan',150);
             $tb->timestamps();
         });
     }
@@ -30,5 +30,6 @@ class Tbkategorii extends Migration
     public function down()
     {
         //
+        schema::dropIfExist('Kategorii');
     }
 }

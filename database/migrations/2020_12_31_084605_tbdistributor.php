@@ -14,6 +14,12 @@ class Tbdistributor extends Migration
     public function up()
     {
         //
+        schema::create('Distributor', function(Blueprint $tb) {
+            $tb->increments('Id_Distributor');
+            $tb->varchar('Distributor',100);
+            $tb->varchar('Alamat_Distributor',100);
+            $tb->timestamps();
+        });
     }
 
     /**
@@ -24,5 +30,6 @@ class Tbdistributor extends Migration
     public function down()
     {
         //
+        schema::dropIfExist('Distributor');
     }
 }

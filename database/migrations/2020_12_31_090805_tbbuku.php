@@ -14,6 +14,14 @@ class Tbbuku extends Migration
     public function up()
     {
         //
+        schema::create('Buku',function(Blueprint $tb){
+            $tb->increments('Id_Buku');
+            $tb->string('Nama_Buku',50);
+            $tb->varchar('Penulis',50);
+            $tb->varchar('Penerbit',50);
+            $tb->date('Terbit');
+            $tb->timestamps();
+        });
     }
 
     /**
@@ -24,5 +32,6 @@ class Tbbuku extends Migration
     public function down()
     {
         //
+        schema::dropIfExist('Buku');
     }
 }

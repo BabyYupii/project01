@@ -14,6 +14,11 @@ class Tbpenerbit extends Migration
     public function up()
     {
         //
+        schema::create('Penerbit', function(Blueprint $tb) {
+            $tb->increments('Id_Penerbit');
+            $tb->varchar('Distributor',100);
+            $tb->timestamps();
+        });
     }
 
     /**
@@ -24,5 +29,6 @@ class Tbpenerbit extends Migration
     public function down()
     {
         //
+        schema::dropIfExist('Penerbit');
     }
 }

@@ -14,6 +14,11 @@ class Tbpenulis extends Migration
     public function up()
     {
         //
+        schema::create('Penulis', function(Blueprint $tb) {
+            $tb->increments('Id_Penulis');
+            $tb->varchar('Penulis',100);
+            $tb->timestamps();
+        });
     }
 
     /**
@@ -24,5 +29,6 @@ class Tbpenulis extends Migration
     public function down()
     {
         //
+        schema::dropIfExist('Penulis');
     }
 }
