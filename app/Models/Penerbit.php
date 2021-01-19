@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Penerbit extends Model
 {
     use HasFactory;
+    protected $table='Penerbit';
+    protected $guarded =['Id_Penerbit','created_at', 'updated_at'];
 }

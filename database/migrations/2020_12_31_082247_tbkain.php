@@ -14,12 +14,13 @@ class Tbkain extends Migration
     public function up()
     {
         // 
-        schema::create('Kain',function(Blueprint $tb){
-            $tb->increments('ID');
+        schema::create('Kain',function( Blueprint $tb){
+            $tb->increments('Id');
             $tb->string('Nama_Kain',100);
-            $tb->varchar('Kategorii',100);
+            $tb->integer('Id_Kain');
+            $tb->string('Kategorii',100);
             $tb->integer('qty');
-            $tb->varchar('Distributor',100);
+            $tb->string('Distributor',100);
             $tb->float('Harga_Jual');
             $tb->float('Harga_Beli');
             $tb->timestamps();

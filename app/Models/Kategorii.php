@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Kategorii extends Model
 {
     use HasFactory;
+    protected $table='Kategorii';
+    protected $guarded =['Id_Buku','created_at', 'updated_at'];
 }

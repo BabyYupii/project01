@@ -16,7 +16,7 @@ class Tbpenerbit extends Migration
         //
         schema::create('Penerbit', function(Blueprint $tb) {
             $tb->increments('Id_Penerbit');
-            $tb->varchar('Distributor',100);
+            $tb->string('Distributor',100);
             $tb->timestamps();
         });
     }

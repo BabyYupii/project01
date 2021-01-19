@@ -17,8 +17,8 @@ class Tbbuku extends Migration
         schema::create('Buku',function(Blueprint $tb){
             $tb->increments('Id_Buku');
             $tb->string('Nama_Buku',50);
-            $tb->varchar('Penulis',50);
-            $tb->varchar('Penerbit',50);
+            $tb->string('Penulis',50);
+            $tb->string('Penerbit',50);
             $tb->date('Terbit');
             $tb->timestamps();
         });

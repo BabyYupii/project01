@@ -16,8 +16,8 @@ class Tbdistributor extends Migration
         //
         schema::create('Distributor', function(Blueprint $tb) {
             $tb->increments('Id_Distributor');
-            $tb->varchar('Distributor',100);
-            $tb->varchar('Alamat_Distributor',100);
+            $tb->string('Distributor',100);
+            $tb->string('Alamat_Distributor',100);
             $tb->timestamps();
         });
     }

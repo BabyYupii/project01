@@ -16,7 +16,8 @@ class Tbpenulis extends Migration
         //
         schema::create('Penulis', function(Blueprint $tb) {
             $tb->increments('Id_Penulis');
-            $tb->varchar('Penulis',100);
+            $tb->string('Penulis',100);
+            $tb->string('Nama_Buku',50);
             $tb->timestamps();
         });
     }
