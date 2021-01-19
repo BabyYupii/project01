@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class uas extends Controller
+class Uas2Buku extends Controller
 {
     /**
      * Display a listing of the resource.
