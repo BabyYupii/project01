@@ -16,13 +16,13 @@ class Kategoriiseeder extends Seeder
     {
         //
         Kategorii::create(
-            ['Kategorii'=>'Unione Drill',
+            ['Kategori'=>'Unione Drill',
             'Keterangan'=>'Digunakan untuk pakaian seperti seragam, baju formal dan lain-lain']);
         Kategorii::create(
-            ['Kategorii'=>'Black Out',
+            ['Kategori'=>'Black Out',
             'Keterangan'=>'Digunakan untuk membuat korden']);
         Kategorii::create(
-            ['Kategorii'=>'Kanvas WR',
+            ['Kategori'=>'Kanvas WR',
             'Keterangan'=>'Digunakan untuk membuat seperti Payung Pantai Karena material ini cukup tahan air']);
     }
 }
