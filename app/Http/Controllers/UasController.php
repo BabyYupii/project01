@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Kategorii;
 use App\Models\Kain;
 use App\Models\Distributor;
+use DB;
 
 class UasController extends Controller
 {
