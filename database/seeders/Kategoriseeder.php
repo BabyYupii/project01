@@ -16,13 +16,13 @@ class Kategoriseeder extends Seeder
     {
         //
             Kategori::create(
-            ['Kategori'=>'keyboard',
+            ['Kategoris'=>'keyboard',
             'Keterangan'=>'Segala macam keyboard PC, Laptop, TV']);
             Kategori::create(
-            ['Kategori'=>'Mouse',
+            ['Kategoris'=>'Mouse',
             'Keterangan'=>'Segala Macam Mouse Wire maupun Wireless']);
             Kategori::create(
-            ['Kategori'=>'Flashdisk',
+            ['Kategoris'=>'Flashdisk',
             'Keterangan'=>'Segala Macam Merek, ukuran Flashdisk']);
     }
 }
