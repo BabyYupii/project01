@@ -9,5 +9,6 @@ class Kain extends Model
 {
     use HasFactory;
     protected $table='Kain';
-    protected $guarded =['Id_Kain','created_at', 'updated_at'];
+    protected $guarded =['Id','created_at', 'updated_at'];
+    protected $fillable =['Nama_Kain','Id_Kain','Kategorii','qty','Distributor','Harga_Jual','Harga_Beli'];
 }

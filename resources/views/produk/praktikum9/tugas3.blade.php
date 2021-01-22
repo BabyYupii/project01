@@ -21,7 +21,7 @@
             @foreach( $PData as $i => $p )
             <tr>
                 <td>{{ $i+1 }}</td>
-                <td>{{ $p->Kategori }}</td>
+                <td>{{ $p->Kategoris }}</td>
                 <td>{{ $p->Nama }}</td>
                 <td>{{$p->qty}}</td>
                 <td>{{$p->HARGA_BELI}}</td>

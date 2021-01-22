@@ -18,9 +18,8 @@ class Tbkain extends Migration
             $tb->increments('Id');
             $tb->string('Nama_Kain',100);
             $tb->integer('Id_Kain');
-            $tb->string('Kategorii',100);
-            $tb->integer('qty');
             $tb->string('Distributor',100);
+            $tb->integer('qty');
             $tb->float('Harga_Jual');
             $tb->float('Harga_Beli');
             $tb->timestamps();

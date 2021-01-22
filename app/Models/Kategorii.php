@@ -9,5 +9,6 @@ class Kategorii extends Model
 {
     use HasFactory;
     protected $table='Kategorii';
-    protected $guarded =['Id_Buku','created_at', 'updated_at'];
+    protected $guarded =['Id_Kat','created_at', 'updated_at'];
+    protected $fillable =['Kategori','Keterangan'];
 }

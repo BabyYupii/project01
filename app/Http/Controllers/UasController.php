@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Kategorii;
 use App\Models\Kain;
 use App\Models\Distributor;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class UasController extends Controller
 {
@@ -17,7 +17,15 @@ class UasController extends Controller
      */
     public function index()
     {
-        //
+        //Menampilkan Data 
+        $Kain = DB::table('Kain')
+        ->join('Kategorii','Kain.Nama_Kain','=','Kategorii.Kategori')
+        ->join('Distributor','Kain.Distributor','=','Distributor.Distributor')
+        ->get();
+        $DKData  = DB::table('Kain')->get();
+        $JRek  = DB::table('Kain')->count();
+
+        return view('Uas.index', compact('Kain','DKData','JRek'));
     }
 
     /**
@@ -28,6 +36,11 @@ class UasController extends Controller
     public function create()
     {
         //
+        $KKat = Kain::get();
+        $DKat = Distributor::get();
+        $KTKat = Kategorii::get();
+        
+        return view('Uas.create', compact('KKat','DKat','KTKat'));
     }
 
     /**
@@ -39,6 +52,31 @@ class UasController extends Controller
     public function store(Request $request)
     {
         //
+        $aturan = [
+            'txKain'=>'required',
+            'txID'=>'required|numeric',
+            'txHargaJual'=>'required|numeric',
+            'txHargaBeli'=>'required|numeric',
+            'txStok'=>'required|numeric',
+            
+        ];
+        $msg = [
+            'requred'=>'wajib diisi',
+            'numeric'=>'diisi dengan data angka',
+        ];
+        //lakukan validasi form
+        $this->validate($request,$aturan,$msg);
+
+        //menambahkan data baru
+        produks::create([
+            'Nama_Kain'=>$request->txKain ,
+            'Id_Kain'=>$request->txId,
+            'Harga_Jual'=>$request->txHargaJual,
+            'Harga_Beli'=>$request->txHargaBeli,
+            'qty'=>$request->txStok,
+            
+        ]);
+        return redirect()->route ('Uas.index');
     }
 
     /**
@@ -50,6 +88,10 @@ class UasController extends Controller
     public function show($id)
     {
         //
+        $kreteria = "%".$id."%";
+        $DKData = Kain::where('Nama_Kain','like',$kreteria)->get();
+        $JRek = Kain::where('Nama_Kain','like',$kreteria)->count();
+        return view('Uas.index', compact('KData','JRek'));
     }
 
     /**

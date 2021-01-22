@@ -7,6 +7,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\Prak9Controller;
 use App\Http\Controllers\Prak10Controller;
 use App\Http\Controllers\Prak11Controller;
+use App\Http\Controllers\UasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ route::get('/prak9_03', [Prak9Controller::class ,'QB_tugas3']);
 
 route::resource('/prak10', Prak10Controller::class );
 route::resource('/prak11', Prak11Controller::class );
+route::resource('/uas', UasController::class );
 
 route::get('aboutus',function(){
     echo"ini merupakan contoh sebuah page (page about)";
