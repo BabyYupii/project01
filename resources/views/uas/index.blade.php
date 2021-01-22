@@ -1,8 +1,16 @@
-@extends('praktikum')
-@section('JUDUL PAGE','DAFTAR PRODUK')
+@extends('UASindex')
+@section('JUDUL PAGE','Daftar Kain')
 @section('KONTEN')
+<style>
+body {
+
+  background-color : #FFC0CB;
+
+
+}
+</style>
 <h2>daftar kain</h2>
-<sup> Total Data=:{{$JRek}}</sup>
+<body>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -26,10 +34,11 @@
       <td>{{$p->qty}}</td>
       <td>{{$p->Harga_Jual}}</td>
       <td>{{$p->Harga_Beli}}</td>
-      <td><a class="btn btn-outline-warning" href="{{route('Uas.edit',$p->ID)}}">Edit</a></td>
+      <td><a class="btn btn-outline-warning" href="{{route('uas.edit',$p->Id)}}">Edit</a></td>
 
     </tr>
 @endforeach
   </tbody>
 </table>
+</body>
 @stop

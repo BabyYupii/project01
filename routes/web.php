@@ -38,6 +38,7 @@ route::get('/prak9_03', [Prak9Controller::class ,'QB_tugas3']);
 
 route::resource('/prak10', Prak10Controller::class );
 route::resource('/prak11', Prak11Controller::class );
+
 route::resource('/uas', UasController::class );
 
 route::get('aboutus',function(){

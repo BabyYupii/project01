@@ -45,7 +45,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Jumlah Stok</label>
-    <input type="text" name="txStok" class="form-control" id="txStok" value="{{old('txStok')}} >
+    <input type="text" name="txStok" class="form-control" id="txStok" value="{{old('txStok')}}">
     <small id = "emailHelp" class="form-text text-muted">
     Isi Jumlah produk.
     @if($errors->has('txStok'))

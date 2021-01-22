@@ -1,10 +1,10 @@
-@extends('praktikum')
-@section('JUDUL PAGE','PENAMBAHAN DATA PRODUK')
+@extends('UASindex')
+@section('JUDUL PAGE','PENAMBAHAN DATA KAIN')
  @section('KONTEN')
 <h2>penambahan data kain</h2>
 
 <div class="container-fluid">
-<form method="POST" action="{{route('Uas.store')}}">
+<form method="POST" action="{{route('uas.store')}}">
 {{csrf_field()}}
 <input type="hidden" name="_method" value="POST">
   <div class="form-group">
@@ -32,6 +32,18 @@
     </small>
   </div>
   <div class="form-group">
+    <label for="exampleInputEmail1">Distributor</label>
+    <input type="text" name="txKat" class="form-control" id="txKat"  value="{{old('txKat')}}" >
+    <small id="emailHelp" class="form-text text-muted">
+    Isikan Harga Jual produk.
+    @if($errors->has('txKat'))
+            <span class="badge badge-danger ">
+        {{$errors->first('txKat')}}
+            </span>
+    @endif
+    </small>
+  </div>
+  <div class="form-group">
     <label for="exampleInputEmail1">Harga Jual</label>
     <input type="text" name="txHargaJual" class="form-control" id="txHargaJual"  value="{{old('txHargaJual')}}" >
     <small id="emailHelp" class="form-text text-muted">
@@ -44,7 +56,7 @@
     </small>
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Harga_Beli</label>
+    <label for="exampleInputEmail1">Harga Beli</label>
     <input type="text" name="txHargaBeli" class="form-control" id="txHargaBeli"  value="{{old('txHargaBeli')}}" >
     <small id="emailHelp" class="form-text text-muted">
     Isikan Harga Beli produk.
@@ -57,7 +69,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Jumlah Stok</label>
-    <input type="text" name="txStok" class="form-control" id="txStok" value="{{old('txStok')}} >
+    <input type="text" name="txStok" class="form-control" id="txStok" value="{{old('txStok')}}">
     <small id="emailHelp" class="form-text text-muted">
     Isi Jumlah produk.
     @if($errors->has('txStok'))

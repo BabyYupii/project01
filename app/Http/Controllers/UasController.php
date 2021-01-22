@@ -18,14 +18,16 @@ class UasController extends Controller
     public function index()
     {
         //Menampilkan Data 
-        $Kain = DB::table('Kain')
-        ->join('Kategorii','Kain.Nama_Kain','=','Kategorii.Kategori')
-        ->join('Distributor','Kain.Distributor','=','Distributor.Distributor')
+        $Kain = DB::table('kain')
+        ->join('kategorii','kain.Nama_Kain','=','kategorii.Id_Kat')
+        ->join('distributor','kain.Distributor','=','distributor.Id_Distributor')
+        ->select('kain.*','kategorii.Kategori as Nama_Kain','distributor.Distributor as Distributor')
         ->get();
-        $DKData  = DB::table('Kain')->get();
-        $JRek  = DB::table('Kain')->count();
+        
+        $DKData = DB::table('kain')->get();
+        $JRek  = DB::table('kain')->count();
 
-        return view('Uas.index', compact('Kain','DKData','JRek'));
+        return view('uas.index', compact('Kain','DKData', 'JRek'));
     }
 
     /**
@@ -40,7 +42,7 @@ class UasController extends Controller
         $DKat = Distributor::get();
         $KTKat = Kategorii::get();
         
-        return view('Uas.create', compact('KKat','DKat','KTKat'));
+        return view('uas.create', compact('KKat','DKat','KTKat'));
     }
 
     /**
@@ -54,10 +56,11 @@ class UasController extends Controller
         //
         $aturan = [
             'txKain'=>'required',
-            'txID'=>'required|numeric',
+            'txId'=>'required|numeric',
+            'txKat'=>'required',
+            'txStok'=>'required|numeric',
             'txHargaJual'=>'required|numeric',
             'txHargaBeli'=>'required|numeric',
-            'txStok'=>'required|numeric',
             
         ];
         $msg = [
@@ -68,15 +71,16 @@ class UasController extends Controller
         $this->validate($request,$aturan,$msg);
 
         //menambahkan data baru
-        produks::create([
-            'Nama_Kain'=>$request->txKain ,
+        Kain::create([
+            'Nama_Kain'=>$request->txKain,
             'Id_Kain'=>$request->txId,
+            'Distributor'=>$request->txKat,
+            'qty'=>$request->txStok,
             'Harga_Jual'=>$request->txHargaJual,
             'Harga_Beli'=>$request->txHargaBeli,
-            'qty'=>$request->txStok,
             
         ]);
-        return redirect()->route ('Uas.index');
+        return redirect()->route('uas.index');
     }
 
     /**
@@ -91,7 +95,7 @@ class UasController extends Controller
         $kreteria = "%".$id."%";
         $DKData = Kain::where('Nama_Kain','like',$kreteria)->get();
         $JRek = Kain::where('Nama_Kain','like',$kreteria)->count();
-        return view('Uas.index', compact('KData','JRek'));
+        return view('uas.index', compact('DKData','JRek'));
     }
 
     /**
@@ -103,6 +107,8 @@ class UasController extends Controller
     public function edit($id)
     {
         //
+        $edt = Kain::where('Id', $id)->first();
+        return view('uas.edit',compact('edt'));
     }
 
     /**
@@ -115,7 +121,18 @@ class UasController extends Controller
     public function update(Request $request, $id)
     {
         //
+        Kain::where('Id', $id)->update([
+            'Nama_Kain'=> $request->txKain,
+            'Id_Kain'=> $request->txId,
+            'Distributor'=> $request->txKat,
+            'qty'=>$request->txStok,
+            'Harga_Jual'=> $request->txHargaJual,
+            'Harga_Beli'=>$request->txHargaBeli,
+
+        ]);
+        return redirect()->route('uas.index');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -126,5 +143,7 @@ class UasController extends Controller
     public function destroy($id)
     {
         //
+        Kain::Where('Id',$id)->delete();
+        return redirect()->route('uas.index');
     }
 }
