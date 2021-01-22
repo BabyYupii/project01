@@ -34,7 +34,13 @@ body {
       <td>{{$p->qty}}</td>
       <td>{{$p->Harga_Jual}}</td>
       <td>{{$p->Harga_Beli}}</td>
-      <td><a class="btn btn-outline-warning" href="{{route('uas.edit',$p->Id)}}">Edit</a></td>
+      <td>
+      <form action="{{ route('uas.destroy',$p->Id) }}" method="POST">
+      <a class="btn btn-outline-warning" href="{{route('uas.edit',$p->Id)}}">Edit</a>
+      @csrf()
+      @method('DELETE')  
+      <button type="submit" class="btn btn-outline-warning" href="{{route('uas.destroy',$p->Id)}}">Hapus</a>
+      </td>
 
     </tr>
 @endforeach

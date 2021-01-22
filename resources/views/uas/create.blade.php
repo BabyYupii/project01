@@ -11,7 +11,7 @@
     <label for="exampleInputEmail1">Nama Kain</label>
     <input type="text" name="txKain" class="form-control" id="txKain" value="{{old('txKain')}}" >
     <small id="emailHelp" class="form-text text-muted">
-    Isikan Nama Kain.
+    Masukan Nama Kain.
     @if($errors->has('txKain'))
             <span class="badge badge-danger ">
         {{$errors->first('txKain')}}
@@ -23,7 +23,7 @@
     <label for="exampleInputEmail1">Kode Kain</label>
     <input type="text" name="txId" class="form-control" id="txId" value="{{old('txId')}}" >
     <small id="emailHelp" class="form-text text-muted">
-    Isikan Kode Kain.
+    Masukan Kode Kain.
     @if($errors->has('txId'))
             <span class="badge badge-danger ">
         {{$errors->first('txId')}}
@@ -35,7 +35,7 @@
     <label for="exampleInputEmail1">Distributor</label>
     <input type="text" name="txKat" class="form-control" id="txKat"  value="{{old('txKat')}}" >
     <small id="emailHelp" class="form-text text-muted">
-    Isikan Harga Jual produk.
+    Masukan Nama Distributor.
     @if($errors->has('txKat'))
             <span class="badge badge-danger ">
         {{$errors->first('txKat')}}
@@ -47,7 +47,7 @@
     <label for="exampleInputEmail1">Harga Jual</label>
     <input type="text" name="txHargaJual" class="form-control" id="txHargaJual"  value="{{old('txHargaJual')}}" >
     <small id="emailHelp" class="form-text text-muted">
-    Isikan Harga Jual produk.
+    Masukan Harga Jual Kain.
     @if($errors->has('txHargaJual'))
             <span class="badge badge-danger ">
         {{$errors->first('txHargaJual')}}
@@ -59,7 +59,7 @@
     <label for="exampleInputEmail1">Harga Beli</label>
     <input type="text" name="txHargaBeli" class="form-control" id="txHargaBeli"  value="{{old('txHargaBeli')}}" >
     <small id="emailHelp" class="form-text text-muted">
-    Isikan Harga Beli produk.
+    Isikan Harga Beli Kain.
     @if($errors->has('txHargaBeli'))
             <span class="badge badge-danger ">
         {{$errors->first('txHargaBeli')}}
@@ -71,7 +71,7 @@
     <label for="exampleInputEmail1">Jumlah Stok</label>
     <input type="text" name="txStok" class="form-control" id="txStok" value="{{old('txStok')}}">
     <small id="emailHelp" class="form-text text-muted">
-    Isi Jumlah produk.
+    Masukan Berapa Meter Kain Datang ( Satuan Meter).
     @if($errors->has('txStok'))
             <span class="badge badge-danger ">
         {{$errors->first('txStok')}}
